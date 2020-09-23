@@ -8,7 +8,7 @@
 				<p style="color: white; padding-left: 5px;">{{ category.status }}</p>
 
 				<hr>
-				<a href="#" class="btn btn-sm btn-danger" role="button">Delete</a>
+				<a class="btn btn-sm btn-danger" role="button" @click="deleteCategory(category)">Delete</a>
 				
 			</div>
 		</div>
@@ -19,5 +19,18 @@
 	import swal from 'sweetalert'
 	export default {
 		props: ['category'],
+
+		methods: {
+			deleteCategory(category){
+				// alert(id);
+				this.$http.delete('api/categories/' + category.id)
+				.then(response => {
+					this.category = category;
+					this.$router.push('/category');
+					console.log(response)
+				})
+	                					
+			}
+		}
 	}
 </script>

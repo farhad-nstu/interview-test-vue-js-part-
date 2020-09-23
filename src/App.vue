@@ -1,8 +1,15 @@
 <template>
   <div id="app">
-    <navbar></navbar>
-    <router-view></router-view>
-    
+    <div class="container p-0 m-0">
+      <div class="row p-0 m-0">
+        <div class="col-md-3">
+          <navbar></navbar>
+        </div>
+        <div class="col-md-9 pl-2">
+          <router-view></router-view>
+        </div>
+      </div>
+    </div>    
   </div>
 </template>
 

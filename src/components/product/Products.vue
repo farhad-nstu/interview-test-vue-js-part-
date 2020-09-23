@@ -12,12 +12,12 @@
 	export default {
 		data() {
 			return {
-				products: []
+				products: [], 
 			}
 		},
 
 		components: {
-			'my-product': Product
+			'my-product': Product 
 		},
 
 		created() {

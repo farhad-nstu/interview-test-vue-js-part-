@@ -12,14 +12,14 @@
 							<label>Category Status</label>
 							<input type="text" name="status" class="form-control" v-model="category.status">					
 						</div>
-						<button class="btn btn-success pul-right" @click="create">
+						<button class="btn btn-success pul-right m-1" @click="create">
 						   Save
 						</button>
 					</div>
 				</div>
 			</div>	
 		</div>	    
-	</div>
+	</div> 
 </template>
 
 <script>

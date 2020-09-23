@@ -6,22 +6,20 @@
 					<div class="panel-body">
 						<div class="form-group">
 							<label>Product Name</label>
-							<input type="text" name="name" class="form-control" v-model="name">							
+							<input type="text" name="name" class="form-control" v-model="product.name">							
 						</div>
 						<div class="form-group">
 							<label>Product Price</label>
-							<input type="number" class="form-control" v-model="price">
+							<input type="number" class="form-control" v-model="product.price">
 						</div>
 						<div class="form-group">
 							<label>Product Quantity</label>
-							<input type="number" class="form-control" v-model="qty">
-						</div>
-
-
+							<input type="number" class="form-control" v-model="product.qty">
+						</div> 
 
 	                    <div class="form-group">
 	                        <label>Select Category</label>
-	                        <select class="form-control" v-model="category_id" required >
+	                        <select class="form-control" v-model="product.category_id" required >
 		                        <option value>Select Category</option>
 		                        <option
 									v-for="category in categories" :key="category.name"
@@ -31,7 +29,7 @@
 	                    </div>
 
    
-						<button class="btn btn-success pul-right" @click="create">
+						<button class="btn btn-success pul-right m-1" @click="create">
 						   Save
 						</button>
 					</div>
@@ -50,10 +48,12 @@
 		data() {
 			return {
 				categories: [],
+				product: {
 					name: '',
 					price: '',
 					qty: '',
 					category_id: ''
+				}
 			}
 		},
 
@@ -62,7 +62,7 @@
            .then(response => {
 
            	   this.categories = response.body
-           	   console.log(this.categories)
+           	   console.log(this.categories);
            })
 		},
 
@@ -71,7 +71,7 @@
 			create () {
 				this.$http.post('api/products', this.product)
 				.then(response => {
-					this.$router.push('/products')
+					this.$router.push('/products');
 				})
 			}
 

@@ -14,7 +14,7 @@
 
 				
 			</div>
-		</div>
+		</div> 
 	</div>
 </template>
 
@@ -24,29 +24,6 @@
 		props: ['product'],
 
 		methods: {
-			/*deleteProduct () {
-				swal({
-					 title: "Good job!",
-					 text: "You clicked the button!",
-					 icon: "success",
-					 type: "warning",
-					 showCancelButton: true,
-					 confirmButtonColor: "#DD6B55",
-					 confirmButtonText: "Yes, delete it!",
-					 closeConfirm: false
-				},
-
-					function(){
-						alert()
-						this.$http.delete('api/products/' + this.product.id)
-						.then(response => {
-							console.log(response)
-						})
-					}.bind(this)
-                );
-                
-				
-			}*/
 		}
 	}
 </script>
